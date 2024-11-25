@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations of Folklore in North Carolina</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+            margin: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Locations of Folklore in North Carolina</h1>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([35.5, -79.3], 7);
+
+        // Add a basemap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add markers
+        const beastMarker = L.marker([34.544741706534815, -78.78710656926366])
+            .addTo(map)
+            .bindPopup('<b>Beast of Bladenboro</b>');
+
+        const devilMarker = L.marker([35.590614139762515, -79.49213827498805])
+            .addTo(map)
+            .bindPopup('<b>Devil\'s Tramping Ground</b>');
+    </script>
+</body>
+</html>
